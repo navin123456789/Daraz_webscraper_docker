@@ -47,11 +47,11 @@ def render_header():
 def render_sidebar():
     """Render sidebar with search settings"""
     with st.sidebar:
-        st.header("⚙️ Settings")
+        st.header("Settings")
         
         # Search query input
         search_query = st.text_input(
-            "🔍 Enter product name",
+            "Enter product name",
             placeholder="e.g., facewash, laptop, phone",
             help="Enter the product you want to search for"
         )
@@ -77,7 +77,7 @@ def render_sidebar():
         st.divider()
         
         # Tips section
-        with st.expander("💡 Tips for Better Results"):
+        with st.expander("Tips for Better Results"):
             st.markdown("""
             - Use specific product names
             - Start with 2-3 pages
@@ -155,7 +155,7 @@ def render_download_button(df, search_query):
     with col2:
         csv = df.to_csv(index=False)
         st.download_button(
-            label="📥 Download Results as CSV",
+            label="Download Results as CSV",
             data=csv,
             file_name=f"daraz_{search_query}_results.csv",
             mime="text/csv",
@@ -174,7 +174,7 @@ def render_welcome_screen():
         st.markdown("### Quick Start")
         st.markdown("""
         1. Enter product name in sidebar
-        2. Select pages (2-3 recommended)
+        2. Select pages
         3. Click "Search Products"
         4. View live updates & results
         """)
